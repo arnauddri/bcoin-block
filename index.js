@@ -51,7 +51,7 @@ module.exports = Block;
 
 Block.prototype.hash = function hash(enc) {
     // Hash it
-    if (!this._hash) this._hash = utils.toHex(utils.dsha256(this.abbr()));
+    if (!this._hash) this._hash = utils.toHex(utils.dsha256(this.abbr()).reverse());
     return enc === 'hex' ? this._hash : utils.toArray(this._hash, 'hex');
 };
 
